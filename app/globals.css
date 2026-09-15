@@ -3,33 +3,72 @@
 @tailwind utilities;
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
   body {
-    @apply bg-slate-50 text-slate-900 antialiased font-sans;
+    @apply bg-slate-950 text-slate-100 antialiased font-sans selection:bg-blue-600 selection:text-white;
   }
 }
 
 /* Civic Badge Animations */
 .badge-critical {
-  @apply bg-rose-100 text-rose-800 border border-rose-300;
+  @apply bg-rose-500/20 text-rose-300 border border-rose-500/40;
 }
 .badge-high {
-  @apply bg-orange-100 text-orange-800 border border-orange-300;
+  @apply bg-orange-500/20 text-orange-300 border border-orange-500/40;
 }
 .badge-medium {
-  @apply bg-amber-100 text-amber-800 border border-amber-300;
+  @apply bg-amber-500/20 text-amber-300 border border-amber-500/40;
 }
 .badge-low {
-  @apply bg-emerald-100 text-emerald-800 border border-emerald-300;
+  @apply bg-emerald-500/20 text-emerald-300 border border-emerald-500/40;
 }
 .badge-info {
-  @apply bg-sky-100 text-sky-800 border border-sky-300;
+  @apply bg-sky-500/20 text-sky-300 border border-sky-500/40;
 }
 
 /* Glass effect */
 .glass-panel {
-  background: rgba(255, 255, 255, 0.92);
-  backdrop-filter: blur(12px);
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.glass-panel-light {
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   border: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+/* 3D Perspective & Depth Helpers */
+.perspective-1000 {
+  perspective: 1000px;
+}
+.preserve-3d {
+  transform-style: preserve-3d;
+}
+
+/* Metro Animation Keyframes */
+@keyframes metroTrackGlitter {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes metroPulse {
+  0%, 100% { opacity: 0.8; filter: drop-shadow(0 0 12px rgba(249, 115, 22, 0.8)); }
+  50% { opacity: 1; filter: drop-shadow(0 0 24px rgba(249, 115, 22, 1)); }
+}
+
+@keyframes floatGentle {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+.animate-float {
+  animation: floatGentle 4s ease-in-out infinite;
 }
 
 /* Leaflet Map Styles */
