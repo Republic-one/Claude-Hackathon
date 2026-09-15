@@ -1,0 +1,421 @@
+{
+  "departments": [
+    {
+      "id": "dept-street-lighting",
+      "code": "STREET_LIGHTING",
+      "name": "Street Lighting / Electrical",
+      "nameHindi": "मार्ग प्रकाश / विद्युत",
+      "bmcDivision": "Electrical & Mechanical Division",
+      "slaDays": 2,
+      "contactEmail": "electrical.bmc@mp.gov.in",
+      "categories": [
+        {
+          "id": "cat-sl-failure",
+          "name": "Street Light Failure",
+          "nameHindi": "स्ट्रीट लाइट बंद होना",
+          "subCategories": ["Single Light Out", "Entire Street Dark", "Flickering Light", "Pole Damage"],
+          "keywordsEnglish": ["street light", "streetlight", "light", "lamp", "pole", "dark", "darkness", "bulb", "flickering", "lighting", "illumination", "night visibility"],
+          "keywordsHindi": ["स्ट्रीट लाइट", "बत्ती", "खंभा", "अंधेरा", "रोशनी", "बल्ब", "लाइट बंद"],
+          "keywordsHinglish": ["street light", "light band", "andhera", "dark", "khamba", "flicker", "raat me andhera", "batti band", "street light kharab", "khambe par light"],
+          "defaultUrgency": "Medium",
+          "safetyRiskFactor": 25,
+          "outageRiskFactor": 20
+        },
+        {
+          "id": "cat-sl-wire",
+          "name": "Exposed / Dangling Electric Wire",
+          "nameHindi": "खुला / लटकता बिजली का तार",
+          "subCategories": ["Open Junction Box", "Live Wire Hanging", "Sparking Wire", "Broken Electric Pole"],
+          "keywordsEnglish": ["exposed wire", "dangling wire", "electric shock", "sparking", "hanging wire", "current", "live wire", "open box", "transformer spark"],
+          "keywordsHindi": ["बिजली का तार", "करंट", "खुला तार", "चिंगारी", "तार लटक रहा"],
+          "keywordsHinglish": ["khula taar", "current aa raha", "sparking", "taar latak raha", "bijli ka taar", "bijli current", "wire open", "live wire"],
+          "defaultUrgency": "Critical",
+          "safetyRiskFactor": 45,
+          "outageRiskFactor": 25
+        }
+      ]
+    },
+    {
+      "id": "dept-water-supply",
+      "code": "WATER_SUPPLY",
+      "name": "Water Supply",
+      "nameHindi": "जल प्रदाय विभाग",
+      "bmcDivision": "Public Health Engineering / Water Works",
+      "slaDays": 1,
+      "contactEmail": "waterworks.bmc@mp.gov.in",
+      "categories": [
+        {
+          "id": "cat-water-outage",
+          "name": "No Water Supply / Interruption",
+          "nameHindi": "जल प्रदाय बाधित / पानी न आना",
+          "subCategories": ["Total Supply Outage", "Low Water Pressure", "Irregular Supply Timings"],
+          "keywordsEnglish": ["no water", "water supply", "drinking water", "tap dry", "water shortage", "water cut", "low pressure water", "borewell failed"],
+          "keywordsHindi": ["पानी नहीं आ रहा", "जल प्रदाय", "पीने का पानी", "नल सूखा", "पानी की किल्लत", "कम दबाव"],
+          "keywordsHinglish": ["pani nahi aa raha", "pani ki samasya", "water supply band", "peene ka pani", "nal me pani nahi", "low pressure", "paani band", "tanker"],
+          "defaultUrgency": "High",
+          "safetyRiskFactor": 15,
+          "outageRiskFactor": 35
+        },
+        {
+          "id": "cat-water-leakage",
+          "name": "Pipe Burst / Water Leakage",
+          "nameHindi": "पाइपलाइन लीकेज / जल रिसाव",
+          "subCategories": ["Main Line Burst", "Pipeline Joint Leak", "Valve Leak", "Wastage on Road"],
+          "keywordsEnglish": ["pipe burst", "water leakage", "leaking pipe", "water gushing", "broken pipeline", "wastage of water"],
+          "keywordsHindi": ["पाइप फूटा", "पानी बह रहा", "पाइपलाइन लीकेज", "पानी की बर्बादी"],
+          "keywordsHinglish": ["pipe phoot gaya", "pani beh raha hai", "water leak", "pipeline damage", "sadak par pani beh raha"],
+          "defaultUrgency": "Medium",
+          "safetyRiskFactor": 10,
+          "outageRiskFactor": 20
+        },
+        {
+          "id": "cat-water-contamination",
+          "name": "Contaminated / Dirty Water",
+          "nameHindi": "गंदा / दूषित पेयजल",
+          "subCategories": ["Muddy Water", "Smelly Water", "Sewage Mixed with Tap Water"],
+          "keywordsEnglish": ["dirty water", "contaminated water", "muddy water", "foul smell water", "yellow water", "black water", "unsafe drinking water"],
+          "keywordsHindi": ["गंदा पानी", "बदबूदार पानी", "दूषित पानी", "सीवेज मिला पानी"],
+          "keywordsHinglish": ["ganda pani", "badboodar pani", "nali ka pani mix", "black water in tap", "peene yogya nahi"],
+          "defaultUrgency": "Critical",
+          "safetyRiskFactor": 35,
+          "outageRiskFactor": 30
+        }
+      ]
+    },
+    {
+      "id": "dept-sewerage-drainage",
+      "code": "SEWERAGE_DRAINAGE",
+      "name": "Sewerage / Drainage",
+      "nameHindi": "सीवरेज एवं जल निकासी",
+      "bmcDivision": "Sewerage Maintenance Cell",
+      "slaDays": 2,
+      "contactEmail": "sewerage.bmc@mp.gov.in",
+      "categories": [
+        {
+          "id": "cat-sewer-overflow",
+          "name": "Sewer Overflow / Choked Line",
+          "nameHindi": "सीवर लाइन जाम / उफान",
+          "subCategories": ["Choked Sewer Chamber", "Sewage on Street", "Backflow into House"],
+          "keywordsEnglish": ["sewer overflow", "choked drain", "sewage", "gutter overflow", "blocked sewer", "foul smell sewage"],
+          "keywordsHindi": ["सीवर जाम", "गटर का पानी", "सीवर उफान", "गंदा नाला चोक"],
+          "keywordsHinglish": ["sewer choke", "gutter ufan raha", "gutter ka pani sadak pe", "sewerage block", "nali jam"],
+          "defaultUrgency": "High",
+          "safetyRiskFactor": 30,
+          "outageRiskFactor": 25
+        },
+        {
+          "id": "cat-open-manhole",
+          "name": "Open / Broken Manhole",
+          "nameHindi": "खुला / टूटा मैनहोल",
+          "subCategories": ["Missing Manhole Cover", "Broken Chamber Lid", "Sunken Drain Cover"],
+          "keywordsEnglish": ["open manhole", "broken manhole", "missing lid", "drain chamber open", "manhole cover missing", "fatal pit"],
+          "keywordsHindi": ["खुला मैनहोल", "ढक्कन टूटा", "गटर खुला", "गड्ढा खुला", "गटर का ढक्कन", "मैनहोल", "ढक्कन", "गटर"],
+          "keywordsHinglish": ["khula manhole", "manhole ka dhakkan gayab", "gutter open", "ch चैंबर खुला", "girne ka darr", "manhole open", "dhakkan khula"],
+          "defaultUrgency": "Critical",
+          "safetyRiskFactor": 45,
+          "outageRiskFactor": 15
+        }
+      ]
+    },
+    {
+      "id": "dept-solid-waste",
+      "code": "SOLID_WASTE",
+      "name": "Solid Waste Management",
+      "nameHindi": "ठोस अपशिष्ट प्रबंधन",
+      "bmcDivision": "Cleanliness & Waste Management",
+      "slaDays": 1,
+      "contactEmail": "solidwaste.bmc@mp.gov.in",
+      "categories": [
+        {
+          "id": "cat-garbage-dump",
+          "name": "Garbage Heap / Unattended Dump",
+          "nameHindi": "कचरे का ढेर / कचरा न उठना",
+          "subCategories": ["Overflowing Dustbin", "Street Corner Garbage Pile", "Dead Animal Dumping", "Plastic Waste Dump"],
+          "keywordsEnglish": ["garbage", "trash", "waste", "rubbish", "dump", "dustbin overflowing", "kachra", "refuse", "litter"],
+          "keywordsHindi": ["कचरा", "कूड़ा", "कचरे का ढेर", "डस्टबिन भरा", "सफाई नहीं हुई"],
+          "keywordsHinglish": ["kachra pada hai", "kuda nahi utha", "garbage dump", "dustbin overfill", "kachre ka dher", "badboo aa rahi kachre se"],
+          "defaultUrgency": "Medium",
+          "safetyRiskFactor": 20,
+          "outageRiskFactor": 25
+        },
+        {
+          "id": "cat-door-to-door",
+          "name": "Door-to-Door Vehicle Not Arriving",
+          "nameHindi": "कचरा गाड़ी नहीं आ रही",
+          "subCategories": ["Garbage Van Skipped Locality", "Irregular Waste Collection"],
+          "keywordsEnglish": ["garbage truck", "door to door collection", "waste vehicle", "safai gaadi", "collection skipped"],
+          "keywordsHindi": ["कचरा गाड़ी नहीं आई", "डोर टू डोर वाहन", "कचरा वाहन"],
+          "keywordsHinglish": ["kachra gaadi nahi aayi", "safai wali gadi", "kachre ki gadi 3 din se nahi aayi", "waste pickup missing"],
+          "defaultUrgency": "Medium",
+          "safetyRiskFactor": 10,
+          "outageRiskFactor": 25
+        }
+      ]
+    },
+    {
+      "id": "dept-roads-potholes",
+      "code": "ROADS_POTHOLES",
+      "name": "Roads / Potholes",
+      "nameHindi": "सड़क एवं गड्ढे",
+      "bmcDivision": "Civil Engineering / Roads Wing",
+      "slaDays": 4,
+      "contactEmail": "roads.bmc@mp.gov.in",
+      "categories": [
+        {
+          "id": "cat-pothole",
+          "name": "Potholes / Damaged Road Surface",
+          "nameHindi": "सड़क पर गड्ढे / जर्जर सड़क",
+          "subCategories": ["Deep Pothole", "Cave-in", "Gravel Displaced", "Cracked Asphalt"],
+          "keywordsEnglish": ["pothole", "crater", "damaged road", "broken road", "rough road", "asphalt cracked", "gadda"],
+          "keywordsHindi": ["गड्ढा", "गड्ढे", "टूटी सड़क", "सड़क खराब", "सड़क धंस गई"],
+          "keywordsHinglish": ["gaddha", "sadak tuti hui", "pothole", "bada gaddha", "bike gir gayi", "accident ho sakta hai", "sadak par khadde"],
+          "defaultUrgency": "High",
+          "safetyRiskFactor": 35,
+          "outageRiskFactor": 15
+        },
+        {
+          "id": "cat-road-caving",
+          "name": "Road Cave-in / Trench Left Open",
+          "nameHindi": "सड़क धंसना / खुली छोड़ी गई खुदाई",
+          "subCategories": ["Pipeline Trench Not Filled", "Major Road Subsidence", "Dangerous Cavity"],
+          "keywordsEnglish": ["cave in", "road sink", "trench open", "excavation left open", "road subsidence"],
+          "keywordsHindi": ["सड़क धंसी", "खुदाई नहीं भरी", "सड़क में गहरा गड्ढा"],
+          "keywordsHinglish": ["sadak dhans gayi", "khudai karke chhod diya", "road cave in", "gadda khula chhod diya"],
+          "defaultUrgency": "Critical",
+          "safetyRiskFactor": 45,
+          "outageRiskFactor": 20
+        }
+      ]
+    },
+    {
+      "id": "dept-sanitation",
+      "code": "SANITATION",
+      "name": "Sanitation",
+      "nameHindi": "स्वच्छता विभाग",
+      "bmcDivision": "Health & Sanitation Wing",
+      "slaDays": 1,
+      "contactEmail": "sanitation.bmc@mp.gov.in",
+      "categories": [
+        {
+          "id": "cat-sweeping",
+          "name": "Street Sweeping / Cleaning Not Done",
+          "nameHindi": "झाड़ू / सड़क की सफाई न होना",
+          "subCategories": ["Street Sweeper Absent", "Leaves and Dirt Unswept"],
+          "keywordsEnglish": ["sweeping", "street cleaning", "sweeper absent", "brooming", "dusty road", "cleaning not done"],
+          "keywordsHindi": ["झाड़ू नहीं लगी", "सफाई नहीं हुई", "सड़क गंदी", "सफाईकर्मी नहीं आए"],
+          "keywordsHinglish": ["jhadu nahi lagi", "safai nahi hui", "sweeper nahi aaya", "road pe dhool mitti"],
+          "defaultUrgency": "Low",
+          "safetyRiskFactor": 5,
+          "outageRiskFactor": 15
+        }
+      ]
+    },
+    {
+      "id": "dept-public-health",
+      "code": "PUBLIC_HEALTH",
+      "name": "Public Health",
+      "nameHindi": "लोक स्वास्थ्य विभाग",
+      "bmcDivision": "Chief Medical & Health Officer BMC",
+      "slaDays": 2,
+      "contactEmail": "publichealth.bmc@mp.gov.in",
+      "categories": [
+        {
+          "id": "cat-mosquito-fogging",
+          "name": "Mosquito Breeding / Fogging Required",
+          "nameHindi": "मच्छर का प्रकोप / फॉगिंग आवश्यक",
+          "subCategories": ["Dengue Outbreak Threat", "Stagnant Water Mosquitoes", "No Anti-Larva Spray"],
+          "keywordsEnglish": ["mosquitoes", "fogging", "dengue", "malaria", "larva", "stagnant water breeding", "fever spread"],
+          "keywordsHindi": ["मच्छर", "फॉगिंग", "डेंगू", "मलेरिया", "दवा छिड़काव"],
+          "keywordsHinglish": ["machhar bohot hain", "fogging machine nahi aayi", "dengue ka darr", "machhar marne ki dava spray", "dawa chhidkao"],
+          "defaultUrgency": "High",
+          "safetyRiskFactor": 30,
+          "outageRiskFactor": 15
+        }
+      ]
+    },
+    {
+      "id": "dept-parks-gardens",
+      "code": "PARKS_GARDENS",
+      "name": "Parks / Gardens",
+      "nameHindi": "उद्यान विभाग",
+      "bmcDivision": "Horticulture & Parks Wing",
+      "slaDays": 5,
+      "contactEmail": "parks.bmc@mp.gov.in",
+      "categories": [
+        {
+          "id": "cat-park-maintenance",
+          "name": "Park Maintenance & Grass Cutting",
+          "nameHindi": "पार्क रखरखाव एवं घास कटाई",
+          "subCategories": ["Overgrown Bushes", "Broken Benches / Swings", "Non-functional Walking Track"],
+          "keywordsEnglish": ["park", "garden", "lawn", "grass overgrown", "broken swing", "walking track damaged", "bench broken"],
+          "keywordsHindi": ["पार्क", "बगीचा", "घास बड़ी हो गई", "झूला टूटा", "बेंच टूटी"],
+          "keywordsHinglish": ["park me jhadia badh gayi", "garden maintain nahi", "jhula tuta", "park ki safai"],
+          "defaultUrgency": "Low",
+          "safetyRiskFactor": 10,
+          "outageRiskFactor": 10
+        }
+      ]
+    },
+    {
+      "id": "dept-encroachment",
+      "code": "ENCROACHMENT",
+      "name": "Encroachment",
+      "nameHindi": "अतिक्रमण निरोधक दस्ता",
+      "bmcDivision": "Anti-Encroachment Cell",
+      "slaDays": 3,
+      "contactEmail": "encroachment.bmc@mp.gov.in",
+      "categories": [
+        {
+          "id": "cat-illegal-structure",
+          "name": "Illegal Shop / Footpath Encroachment",
+          "nameHindi": "फुटपाथ पर अवैध कब्जा / ठेले",
+          "subCategories": ["Footpath Blocked by Vendors", "Permanent Illegal Extension", "Unauthorized Hoarding"],
+          "keywordsEnglish": ["encroachment", "illegal construction", "footpath blocked", "illegal vendors", "thela blocking road", "tin shed on public land"],
+          "keywordsHindi": ["अतिक्रमण", "फुटपाथ बंद", "अवैध कब्जा", "रास्ता रोका"],
+          "keywordsHinglish": ["atigraman", "footpath par kabza", "illegal thela", "pedestrian footpath block", "rasta band kar diya"],
+          "defaultUrgency": "Medium",
+          "safetyRiskFactor": 20,
+          "outageRiskFactor": 20
+        }
+      ]
+    },
+    {
+      "id": "dept-stray-animals",
+      "code": "STRAY_ANIMALS",
+      "name": "Stray Animals",
+      "nameHindi": "आवारा पशु नियंत्रण",
+      "bmcDivision": "Veterinary & Cattle Catching Wing",
+      "slaDays": 2,
+      "contactEmail": "veterinary.bmc@mp.gov.in",
+      "categories": [
+        {
+          "id": "cat-stray-cattle-dogs",
+          "name": "Stray Dogs Aggression / Cattle on Road",
+          "nameHindi": "आवारा कुत्ते / मवेशी सड़कों पर",
+          "subCategories": ["Aggressive Stray Dog Pack", "Dog Bite Incident", "Cattle Sitting on Highway"],
+          "keywordsEnglish": ["stray dog", "dog bite", "rabid dog", "stray cow", "cattle on road", "bull fighting", "animals blocking traffic"],
+          "keywordsHindi": ["आवारा कुत्ता", "कुत्ते ने काटा", "गाय बैठी है", "सांड", "आवारा पशु"],
+          "keywordsHinglish": ["awara kutte", "dog bite", "stray dog pack", "gaye baithi hai road par", "kutta kaat raha", "saand lad rahe"],
+          "defaultUrgency": "High",
+          "safetyRiskFactor": 35,
+          "outageRiskFactor": 15
+        }
+      ]
+    },
+    {
+      "id": "dept-traffic-infra",
+      "code": "TRAFFIC_INFRA",
+      "name": "Traffic-related civic infrastructure",
+      "nameHindi": "यातायात नागरिक अवसंरचना",
+      "bmcDivision": "Traffic Engineering Cell",
+      "slaDays": 3,
+      "contactEmail": "trafficinfra.bmc@mp.gov.in",
+      "categories": [
+        {
+          "id": "cat-traffic-signal",
+          "name": "Traffic Signal Malfunction / Missing Signage",
+          "nameHindi": "ट्रैफिक सिग्नल खराबी / दिशा सूचक बोर्ड",
+          "subCategories": ["Signal Red Light Stuck", "Blinker Dead", "Road Divider Broken", "Zebra Crossing Faded"],
+          "keywordsEnglish": ["traffic light", "traffic signal", "signal broken", "blinker", "divider broken", "signboard missing", "speed breaker damaged"],
+          "keywordsHindi": ["ट्रैफिक सिग्नल", "लाल बत्ती खराब", "डिवाइडर टूटा", "स्पीड ब्रेकर"],
+          "keywordsHinglish": ["traffic light band", "signal kharab", "red light kaam nahi kar rahi", "divider tut gaya", "speed breaker tuta"],
+          "defaultUrgency": "High",
+          "safetyRiskFactor": 35,
+          "outageRiskFactor": 25
+        }
+      ]
+    },
+    {
+      "id": "dept-storm-water",
+      "code": "STORM_WATER",
+      "name": "Storm Water Drainage",
+      "nameHindi": "वर्षा जल निकासी / नाला",
+      "bmcDivision": "Flood Control & Nallah Division",
+      "slaDays": 1,
+      "contactEmail": "stormwater.bmc@mp.gov.in",
+      "categories": [
+        {
+          "id": "cat-water-logging",
+          "name": "Severe Water Logging / Nallah Overflow",
+          "nameHindi": "जल भराव / नाला उफान / बाढ़ की स्थिति",
+          "subCategories": ["Rain Water Entering Houses", "Road Submerged in Water", "Culvert Choked"],
+          "keywordsEnglish": ["waterlogging", "water logging", "flooding", "submerged road", "nallah choke", "rain water flood", "drain overflowing with rain"],
+          "keywordsHindi": ["जल भराव", "पानी भर गया", "नाला उफना", "बाढ़ जैसा", "घरों में पानी घुसा"],
+          "keywordsHinglish": ["jal bharav", "pani bhar gaya sadak pe", "water logging", "nalla ufan raha", "ghar me pani ghus raha hai", "ghutno tak pani"],
+          "defaultUrgency": "Critical",
+          "safetyRiskFactor": 45,
+          "outageRiskFactor": 30
+        }
+      ]
+    },
+    {
+      "id": "dept-public-toilets",
+      "code": "PUBLIC_TOILETS",
+      "name": "Public Toilets",
+      "nameHindi": "सार्वजनिक शौचालय",
+      "bmcDivision": "Swachh Bharat Mission Wing",
+      "slaDays": 1,
+      "contactEmail": "publictoilets.bmc@mp.gov.in",
+      "categories": [
+        {
+          "id": "cat-toilet-cleanliness",
+          "name": "Public Toilet Filthy / No Water Supply",
+          "nameHindi": "शौचालय में गंदगी / पानी की अनुपलब्धता",
+          "subCategories": ["No Water in Toilet", "Broken Flush", "Severe Odor and Unhygienic", "Toilet Locked"],
+          "keywordsEnglish": ["public toilet", "urinal", "sulabh shauchalaya", "toilet dirty", "no water in toilet", "flush broken"],
+          "keywordsHindi": ["सार्वजनिक शौचालय", "शौचालय गंदा", "शौचालय में पानी नहीं", "टॉयलेट"],
+          "keywordsHinglish": ["public toilet", "toilet me pani nahi", "toilet ganda hai", "shauchalaya chauk hai", "lock laga hai toilet pe"],
+          "defaultUrgency": "Medium",
+          "safetyRiskFactor": 15,
+          "outageRiskFactor": 25
+        }
+      ]
+    },
+    {
+      "id": "dept-tree-horticulture",
+      "code": "TREE_HORTICULTURE",
+      "name": "Tree / Horticulture",
+      "nameHindi": "वृक्ष संरक्षण एवं उद्यानिकी",
+      "bmcDivision": "Tree Trimming & Removal Cell",
+      "slaDays": 2,
+      "contactEmail": "treecell.bmc@mp.gov.in",
+      "categories": [
+        {
+          "id": "cat-fallen-tree",
+          "name": "Fallen Tree / Dangerous Overhanging Branch",
+          "nameHindi": "गिरा हुआ पेड़ / खतरनाक टहनी",
+          "subCategories": ["Tree Fallen on Road", "Branch Touching Electric Wire", "Dead Tree Threatening House"],
+          "keywordsEnglish": ["tree fallen", "fallen branch", "tree touching wire", "dry tree", "branch cut required", "tree blocked road"],
+          "keywordsHindi": ["पेड़ गिर गया", "पेड़ की डाली टूट गई", "पेड़ तार पर गिरा", "रास्ता बंद पेड़ से"],
+          "keywordsHinglish": ["ped gir gaya", "tree fall", "ped ki dali tut gayi", "tar par ped gir gaya", "road blocked tree"],
+          "defaultUrgency": "High",
+          "safetyRiskFactor": 35,
+          "outageRiskFactor": 20
+        }
+      ]
+    },
+    {
+      "id": "dept-other",
+      "code": "OTHER",
+      "name": "Other",
+      "nameHindi": "अन्य नागरिक समस्या",
+      "bmcDivision": "Central Citizen Grievance Cell",
+      "slaDays": 3,
+      "contactEmail": "grievance.bmc@mp.gov.in",
+      "categories": [
+        {
+          "id": "cat-general-civic",
+          "name": "General Civic Complaint",
+          "nameHindi": "सामान्य नागरिक समस्या",
+          "subCategories": ["Civic Query", "Unclassified Matter", "Cross-Departmental Issue"],
+          "keywordsEnglish": ["miscellaneous", "other complaint", "general", "inquiry"],
+          "keywordsHindi": ["अन्य समस्या", "सामान्य"],
+          "keywordsHinglish": ["anya samasya", "general issue", "shikayat"],
+          "defaultUrgency": "Low",
+          "safetyRiskFactor": 5,
+          "outageRiskFactor": 10
+        }
+      ]
+    }
+  ]
+}

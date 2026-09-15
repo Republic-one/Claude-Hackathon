@@ -1,0 +1,266 @@
+{
+  "test_cases": [
+    {
+      "id": "eval-1",
+      "text": "Hamare area me 5 din se street light band hai aur raat ko road bilkul dark rehta hai.",
+      "true_department": "Street Lighting / Electrical",
+      "true_category": "Street Light Failure",
+      "true_urgency": "High",
+      "language": "Hinglish",
+      "locality": "Arera Colony (E-5)"
+    },
+    {
+      "id": "eval-2",
+      "text": "Open electric wire hanging near children park, huge sparking seen yesterday.",
+      "true_department": "Street Lighting / Electrical",
+      "true_category": "Exposed / Dangling Electric Wire",
+      "true_urgency": "Critical",
+      "language": "English",
+      "locality": "Shivaji Nagar (6 No Stop)"
+    },
+    {
+      "id": "eval-3",
+      "text": "पिछले तीन दिनों से हमारे नल में पीने का पानी बिल्कुल नहीं आ रहा है, टैंकर भिजवाएं।",
+      "true_department": "Water Supply",
+      "true_category": "No Water Supply / Interruption",
+      "true_urgency": "High",
+      "language": "Hindi",
+      "locality": "Kotra Sultanabad"
+    },
+    {
+      "id": "eval-4",
+      "text": "Main water pipeline burst near Parihar chouraha, clean water wasting on road.",
+      "true_department": "Water Supply",
+      "true_category": "Pipe Burst / Water Leakage",
+      "true_urgency": "Medium",
+      "language": "English",
+      "locality": "Arera Colony (E-5)"
+    },
+    {
+      "id": "eval-5",
+      "text": "Ganda aur badboodar peele rang ka pani tap me aa raha hai, peene layak nahi hai.",
+      "true_department": "Water Supply",
+      "true_category": "Contaminated / Dirty Water",
+      "true_urgency": "Critical",
+      "language": "Hinglish",
+      "locality": "Chowk Bazaar (Old City)"
+    },
+    {
+      "id": "eval-6",
+      "text": "Sewer chamber is overflowing on the main street with terrible foul smell.",
+      "true_department": "Sewerage / Drainage",
+      "true_category": "Sewer Overflow / Choked Line",
+      "true_urgency": "High",
+      "language": "English",
+      "locality": "New Market (TT Nagar)"
+    },
+    {
+      "id": "eval-7",
+      "text": "गटर का ढक्कन खुला पड़ा है, रात में अंधेरे में किसी का भी पैर या गाड़ी गिर सकती है।",
+      "true_department": "Sewerage / Drainage",
+      "true_category": "Open / Broken Manhole",
+      "true_urgency": "Critical",
+      "language": "Hindi",
+      "locality": "MP Nagar Zone 1"
+    },
+    {
+      "id": "eval-8",
+      "text": "Huge garbage heap lying for one week at street corner, stray animals scattering it.",
+      "true_department": "Solid Waste Management",
+      "true_category": "Garbage Heap / Unattended Dump",
+      "true_urgency": "Medium",
+      "language": "English",
+      "locality": "Indrapuri Sector A/B"
+    },
+    {
+      "id": "eval-9",
+      "text": "Kachra gaadi hamare mohalle me 4 din se nahi aayi hai, ghar me kachra ikattha ho gaya.",
+      "true_department": "Solid Waste Management",
+      "true_category": "Door-to-Door Vehicle Not Arriving",
+      "true_urgency": "Medium",
+      "language": "Hinglish",
+      "locality": "Kolar Road (Sarvdharm)"
+    },
+    {
+      "id": "eval-10",
+      "text": "Bada aur gehra gaddha hai sadak par, kal raat ek bike rider gir gaya tha.",
+      "true_department": "Roads / Potholes",
+      "true_category": "Potholes / Damaged Road Surface",
+      "true_urgency": "High",
+      "language": "Hinglish",
+      "locality": "Shahpura Sector A/B"
+    },
+    {
+      "id": "eval-11",
+      "text": "Deep pipeline excavation left open without any barricade on main road.",
+      "true_department": "Roads / Potholes",
+      "true_category": "Road Cave-in / Trench Left Open",
+      "true_urgency": "Critical",
+      "language": "English",
+      "locality": "MP Nagar Zone 2"
+    },
+    {
+      "id": "eval-12",
+      "text": "हमारे वार्ड में पिछले एक हफ्ते से झाड़ू नहीं लगी है, सड़क पर धूल और पत्ते पड़े हैं।",
+      "true_department": "Sanitation",
+      "true_category": "Street Sweeping / Cleaning Not Done",
+      "true_urgency": "Low",
+      "language": "Hindi",
+      "locality": "Shivaji Nagar (6 No Stop)"
+    },
+    {
+      "id": "eval-13",
+      "text": "Dengue cases reported in colony, lots of mosquitoes due to stagnant water, need fogging machine immediately.",
+      "true_department": "Public Health",
+      "true_category": "Mosquito Breeding / Fogging Required",
+      "true_urgency": "High",
+      "language": "English",
+      "locality": "Chunabhatti Square"
+    },
+    {
+      "id": "eval-14",
+      "text": "Colony park me jhadia bahut badi ho gayi hain aur bachho ke jhoole toote huye hain.",
+      "true_department": "Parks / Gardens",
+      "true_category": "Park Maintenance & Grass Cutting",
+      "true_urgency": "Low",
+      "language": "Hinglish",
+      "locality": "Arera Colony (E-3)"
+    },
+    {
+      "id": "eval-15",
+      "text": "Illegal stalls and thela vendors have encroached the entire pedestrian footpath.",
+      "true_department": "Encroachment",
+      "true_category": "Illegal Shop / Footpath Encroachment",
+      "true_urgency": "Medium",
+      "language": "English",
+      "locality": "New Market (TT Nagar)"
+    },
+    {
+      "id": "eval-16",
+      "text": "Pack of aggressive stray dogs chasing two-wheelers and children in evening.",
+      "true_department": "Stray Animals",
+      "true_category": "Stray Dogs Aggression / Cattle on Road",
+      "true_urgency": "High",
+      "language": "English",
+      "locality": "Minal Residency (Ayodhya Bypass)"
+    },
+    {
+      "id": "eval-17",
+      "text": "Traffic light at Jyoti Talkies chouraha is completely broken, causing massive chaos.",
+      "true_department": "Traffic-related civic infrastructure",
+      "true_category": "Traffic Signal Malfunction / Missing Signage",
+      "true_urgency": "High",
+      "language": "English",
+      "locality": "MP Nagar Zone 1"
+    },
+    {
+      "id": "eval-18",
+      "text": "Heavy rain water logging, nallah overflowing and entering inside ground floor houses.",
+      "true_department": "Storm Water Drainage",
+      "true_category": "Severe Water Logging / Nallah Overflow",
+      "true_urgency": "Critical",
+      "language": "English",
+      "locality": "Karond Square"
+    },
+    {
+      "id": "eval-19",
+      "text": "Public toilet near bus stand is totally filthy, choked flush and no running water.",
+      "true_department": "Public Toilets",
+      "true_category": "Public Toilet Filthy / No Water Supply",
+      "true_urgency": "Medium",
+      "language": "English",
+      "locality": "Sant Hirdaram Nagar (Bairagarh)"
+    },
+    {
+      "id": "eval-20",
+      "text": "A large Gulmohar tree branch broke down and is blocking the residential lane.",
+      "true_department": "Tree / Horticulture",
+      "true_category": "Fallen Tree / Dangerous Overhanging Branch",
+      "true_urgency": "High",
+      "language": "English",
+      "locality": "Shyamla Hills & VIP Road"
+    },
+    {
+      "id": "eval-21",
+      "text": "Street light pole bent dangerously over road after mini-truck hit it last night.",
+      "true_department": "Street Lighting / Electrical",
+      "true_category": "Street Light Failure",
+      "true_urgency": "High",
+      "language": "English",
+      "locality": "Kolar Road (Sarvdharm)"
+    },
+    {
+      "id": "eval-22",
+      "text": "Parihar chowk par 3 din se street light band hai, andhera rehta hai.",
+      "true_department": "Street Lighting / Electrical",
+      "true_category": "Street Light Failure",
+      "true_urgency": "High",
+      "language": "Hinglish",
+      "locality": "Arera Colony (E-5)"
+    },
+    {
+      "id": "eval-23",
+      "text": "Water leakage from municipal valve wasting thousands of liters daily on road.",
+      "true_department": "Water Supply",
+      "true_category": "Pipe Burst / Water Leakage",
+      "true_urgency": "Medium",
+      "language": "English",
+      "locality": "Bagsewaniya / AIIMS Area"
+    },
+    {
+      "id": "eval-24",
+      "text": "Road divider broken near Chetak bridge, iron rods protruding towards traffic.",
+      "true_department": "Traffic-related civic infrastructure",
+      "true_category": "Traffic Signal Malfunction / Missing Signage",
+      "true_urgency": "High",
+      "language": "English",
+      "locality": "MP Nagar Zone 1"
+    },
+    {
+      "id": "eval-25",
+      "text": "आवारा मवेशी सड़क के बीचों-बीच बैठे रहते हैं, भारी जाम लग रहा है।",
+      "true_department": "Stray Animals",
+      "true_category": "Stray Dogs Aggression / Cattle on Road",
+      "true_urgency": "High",
+      "language": "Hindi",
+      "locality": "Indrapuri Sector A/B"
+    }
+  ],
+  "duplicate_pairs": [
+    {
+      "text1": "Hamare area me 5 din se street light band hai aur raat ko road bilkul dark rehta hai.",
+      "text2": "Parihar chowk par 3 din se street light band hai, andhera rehta hai.",
+      "locality1": "Arera Colony (E-5)",
+      "locality2": "Arera Colony (E-5)",
+      "is_duplicate": true
+    },
+    {
+      "text1": "Main water pipeline burst near Parihar chouraha, clean water wasting on road.",
+      "text2": "Water pipe leaking heavily on the main road in Arera colony E5.",
+      "locality1": "Arera Colony (E-5)",
+      "locality2": "Arera Colony (E-5)",
+      "is_duplicate": true
+    },
+    {
+      "text1": "Sewer chamber is overflowing on the main street with terrible foul smell.",
+      "text2": "Deep pothole on road near bakery causing traffic trouble.",
+      "locality1": "New Market (TT Nagar)",
+      "locality2": "New Market (TT Nagar)",
+      "is_duplicate": false
+    },
+    {
+      "text1": "Open manhole cover missing on road near MP Nagar Zone 1.",
+      "text2": "Bada gaddha sadak par MP Nagar Zone 1 me khula hai bina dhakkan ke.",
+      "locality1": "MP Nagar Zone 1",
+      "locality2": "MP Nagar Zone 1",
+      "is_duplicate": true
+    },
+    {
+      "text1": "Street light not working in Kolar road.",
+      "text2": "Garbage heap lying on Kolar road near Sarvdharm.",
+      "locality1": "Kolar Road (Sarvdharm)",
+      "locality2": "Kolar Road (Sarvdharm)",
+      "is_duplicate": false
+    }
+  ]
+}

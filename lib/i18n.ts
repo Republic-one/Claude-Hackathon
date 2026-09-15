@@ -1,0 +1,118 @@
+export type Locale = 'en' | 'hi';
+
+export const translations = {
+  en: {
+    appTitle: 'Bhopal Civic Complaint Intelligence & Triage System',
+    appSubtitle: 'Turn citizen grievances into structured, actionable municipal tickets',
+    demoBadge: 'Hackathon Demo Mode',
+    reportComplaint: 'Report Complaint',
+    trackComplaint: 'Track Ticket',
+    operatorDashboard: 'Operator Dashboard',
+    complaintQueue: 'Complaint Queue',
+    clusterMap: 'Cluster Map',
+    weeklyReports: 'Weekly Reports',
+    aiEvaluation: 'AI Evaluation',
+    importCsv: 'Import CSV',
+    demoNotice: 'Demo / Dataset Information — No live government connection',
+    
+    // Citizen Intake
+    step1Title: 'Step 1: Describe the Problem',
+    step1Subtitle: 'You can write in English, Hindi, or Hinglish, record voice, or upload a photo.',
+    titlePlaceholder: 'Brief summary (e.g. Street light not working for 3 days)',
+    descPlaceholder: 'Describe the civic grievance in detail (e.g. "Hamare area me 5 din se street light band hai aur raat ko road bilkul dark rehta hai.")',
+    voiceInput: 'Voice Recording',
+    startRecording: 'Start Voice Input',
+    stopRecording: 'Stop Recording',
+    imageUpload: 'Upload Photo',
+    photoCaptionPlaceholder: 'Optional photo caption (e.g. Pothole on main lane)',
+    
+    // Location
+    step2Title: 'Step 2: Location Verification',
+    step2Subtitle: 'Detect your location via GPS or search your Bhopal locality / landmark manually.',
+    detectGps: 'Detect My Location (GPS)',
+    gpsDetected: 'Location Detected via GPS',
+    gpsDenied: 'Location permission was not granted. Enter your locality or landmark manually.',
+    manualLocalityLabel: 'Select Locality or Landmark',
+    manualLocalityPlaceholder: 'e.g. Arera Colony, MP Nagar, New Market, Kolar Road',
+    wardLabel: 'Ward',
+    addressLabel: 'Address / Landmark',
+    
+    // AI Preview
+    analyzeButton: 'Analyze & Submit Complaint',
+    analyzingText: 'AI Triage Engine Analyzing...',
+    aiRecommendation: 'AI Recommendation',
+    routingConfidence: 'Confidence',
+    urgencyLabel: 'Urgency',
+    departmentLabel: 'Department',
+    categoryLabel: 'Category',
+    officeLabel: 'Recommended Office',
+    reasonsLabel: 'Urgency Factors',
+    duplicateWarning: 'Possible Duplicate Detected',
+    
+    // Operator
+    approveRouting: 'Approve Routing',
+    changeDepartment: 'Change Department',
+    changeCategory: 'Change Category',
+    changeUrgency: 'Change Urgency',
+    editLocation: 'Edit Location',
+    confirmedBadge: 'Operator Confirmed',
+    aiRecommendedBadge: 'AI Recommended',
+  },
+  hi: {
+    appTitle: 'भोपाल नागरिक शिकायत आसूचना एवं ट्राइएज प्रणाली',
+    appSubtitle: 'नागरिक शिकायतों को व्यवस्थित और त्वरित नगर निगम टिकटों में बदलें',
+    demoBadge: 'हैकाथॉन डेमो मोड',
+    reportComplaint: 'शिकायत दर्ज करें',
+    trackComplaint: 'स्थिति देखें',
+    operatorDashboard: 'ऑपरेटर डैशबोर्ड',
+    complaintQueue: 'शिकायत कतार',
+    clusterMap: 'समूह मानचित्र',
+    weeklyReports: 'साप्ताहिक रिपोर्ट',
+    aiEvaluation: 'एआई मूल्यांकन',
+    importCsv: 'सीएसवी आयात',
+    demoNotice: 'डेमो / डेटासेट जानकारी — किसी लाइव सरकारी प्रणाली से जुड़ा नहीं है',
+    
+    // Citizen Intake
+    step1Title: 'चरण 1: समस्या का विवरण दें',
+    step1Subtitle: 'आप हिंदी, अंग्रेजी या हिंग्लिश में लिख सकते हैं, आवाज रिकॉर्ड कर सकते हैं या फोटो जोड़ सकते हैं।',
+    titlePlaceholder: 'संक्षिप्त शीर्षक (उदा. 3 दिन से स्ट्रीट लाइट बंद है)',
+    descPlaceholder: 'समस्या का पूरा विवरण लिखें (उदा. "हमारे एरिया में 5 दिन से स्ट्रीट लाइट बंद है और रात को सड़क पर पूरा अंधेरा रहता है।")',
+    voiceInput: 'ध्वनि इनपुट',
+    startRecording: 'बोलना शुरू करें',
+    stopRecording: 'रिकॉर्डिंग समाप्त करें',
+    imageUpload: 'तस्वीर अपलोड करें',
+    photoCaptionPlaceholder: 'फोटो कैप्शन (उदा. मुख्य सड़क पर गहरा गड्ढा)',
+    
+    // Location
+    step2Title: 'चरण 2: स्थान सत्यापन',
+    step2Subtitle: 'जीपीएस द्वारा स्थान खोजें या अपना भोपाल मोहल्ला / लैंडमार्क स्वयं चुनें।',
+    detectGps: 'जीपीएस से स्थान प्राप्त करें',
+    gpsDetected: 'जीपीएस द्वारा स्थान प्राप्त हुआ',
+    gpsDenied: 'स्थान अनुमति नहीं मिली। कृपया अपना मोहल्ला या लैंडमार्क दर्ज करें।',
+    manualLocalityLabel: 'मोहल्ला या लैंडमार्क चुनें',
+    manualLocalityPlaceholder: 'उदा. अरेरा कॉलोनी, एमपी नगर, न्यू मार्केट, कोलार रोड',
+    wardLabel: 'वार्ड',
+    addressLabel: 'पता / लैंडमार्क',
+    
+    // AI Preview
+    analyzeButton: 'विश्लेषण एवं शिकायत दर्ज करें',
+    analyzingText: 'एआई विश्लेषण जारी है...',
+    aiRecommendation: 'एआई अनुशंसा',
+    routingConfidence: 'विश्वास स्तर',
+    urgencyLabel: 'प्राथमिकता',
+    departmentLabel: 'विभाग',
+    categoryLabel: 'श्रेणी',
+    officeLabel: 'अनुशंसित जोनल कार्यालय',
+    reasonsLabel: 'प्राथमिकता कारण',
+    duplicateWarning: 'संभावित मिलती-जुलती शिकायत मिली',
+    
+    // Operator
+    approveRouting: 'रूटिंग स्वीकृत करें',
+    changeDepartment: 'विभाग बदलें',
+    changeCategory: 'श्रेणी बदलें',
+    changeUrgency: 'प्राथमिकता बदलें',
+    editLocation: 'स्थान संशोधित करें',
+    confirmedBadge: 'ऑपरेटर द्वारा पुष्ट',
+    aiRecommendedBadge: 'एआई अनुशंसित',
+  },
+};

@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-slate-50 text-slate-900 antialiased font-sans;
+  }
+}
+
+/* Civic Badge Animations */
+.badge-critical {
+  @apply bg-rose-100 text-rose-800 border border-rose-300;
+}
+.badge-high {
+  @apply bg-orange-100 text-orange-800 border border-orange-300;
+}
+.badge-medium {
+  @apply bg-amber-100 text-amber-800 border border-amber-300;
+}
+.badge-low {
+  @apply bg-emerald-100 text-emerald-800 border border-emerald-300;
+}
+.badge-info {
+  @apply bg-sky-100 text-sky-800 border border-sky-300;
+}
+
+/* Glass effect */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+/* Leaflet Map Styles */
+.leaflet-container {
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  border-radius: 0.75rem;
+}

@@ -1,0 +1,213 @@
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Department {
+  id           String   @id @default(uuid())
+  code         String   @unique
+  name         String
+  nameHindi    String
+  bmcDivision  String
+  slaDays      Int      @default(2)
+  contactEmail String
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  complaints   Complaint[]
+}
+
+model Ward {
+  id          String   @id @default(uuid())
+  wardNumber  Int      @unique
+  wardName    String
+  zoneId      String
+  zoneName    String
+  centerLat   Float
+  centerLng   Float
+  aliases     String   // comma separated or JSON string
+  createdAt   DateTime @default(now())
+
+  localities  Locality[]
+  complaints  Complaint[]
+}
+
+model Locality {
+  id          String   @id @default(uuid())
+  name        String
+  wardId      String
+  pincode     String
+  centerLat   Float
+  centerLng   Float
+  aliases     String   // comma separated
+  createdAt   DateTime @default(now())
+
+  ward        Ward     @relation(fields: [wardId], references: [id])
+}
+
+model MunicipalOffice {
+  id           String   @id @default(uuid())
+  officeId     String   @unique
+  officeName   String
+  department   String
+  zoneId       String
+  address      String
+  latitude     Float
+  longitude    Float
+  phone        String
+  email        String
+  workingHours String
+  isHeadOffice Boolean  @default(false)
+  createdAt    DateTime @default(now())
+
+  complaints   Complaint[]
+}
+
+model Complaint {
+  id                  String   @id @default(uuid())
+  ticketId            String   @unique // e.g. BMC-2026-00001
+  title               String
+  description         String
+  photoCaption        String?
+  imageUrl            String?
+  audioTranscription  String?
+  language            String   @default("English") // English, Hindi, Hinglish
+
+  // Classification (AI Extracted vs Confirmed)
+  originalDepartment  String
+  confirmedDepartment String
+  originalCategory    String
+  confirmedCategory   String
+  subCategory         String?
+
+  // Urgency & Severity
+  urgency             String   @default("Medium") // Low, Medium, High, Critical
+  urgencyScore        Int      @default(50) // 0-100
+  urgencyReasons      String   // JSON string of string[]
+  severity            Int      @default(3) // 1-5
+
+  // AI Quality
+  confidence          Float    @default(0.85) // 0.0 - 1.0
+  aiExplanation       String
+  keywords            String   // JSON string of string[]
+
+  // Location
+  latitude            Float?
+  longitude           Float?
+  address             String?
+  locality            String?
+  wardNumber          Int?
+  wardId              String?
+  isGpsDetected       Boolean  @default(false)
+
+  // Routing & Office
+  responsibleOfficeId String?
+  officeRecommendationSource String? @default("Spatial Proximity & Ward Mapping")
+
+  // Duplicate Detection
+  duplicateProbability Float   @default(0.0)
+  duplicateReason     String?
+  primaryComplaintId  String?  // If this is a duplicate of another complaint
+  isDuplicate         Boolean  @default(false)
+
+  // Status & Operator Confirmation
+  status              String   @default("NEW") // NEW, UNDER_REVIEW, ASSIGNED, IN_PROGRESS, RESOLVED, CLOSED
+  isOperatorConfirmed Boolean  @default(false)
+  confirmedBy         String?
+  confirmedAt         DateTime?
+
+  // Source & Channel
+  sourceChannel       String   @default("Citizen Portal") // Citizen Portal, CM Helpline Export, Municipal App Export, Social Media Export
+
+  createdAt           DateTime @default(now())
+  updatedAt           DateTime @updatedAt
+
+  // Relationships
+  ward                Ward?            @relation(fields: [wardId], references: [id])
+  departmentRel       Department?      @relation(fields: [departmentId], references: [id])
+  departmentId        String?
+  responsibleOffice   MunicipalOffice? @relation(fields: [responsibleOfficeId], references: [id])
+
+  auditLogs           AuditLog[]
+  statusHistory       StatusHistory[]
+  acknowledgement     Acknowledgement?
+  linkedDuplicates    DuplicateLink[]  @relation("PrimaryComplaint")
+  asDuplicateLink     DuplicateLink[]  @relation("LinkedDuplicate")
+}
+
+model DuplicateLink {
+  id                 String    @id @default(uuid())
+  primaryId          String
+  duplicateId        String
+  similarityScore    Float
+  linkReason         String
+  createdAt          DateTime  @default(now())
+
+  primaryComplaint   Complaint @relation("PrimaryComplaint", fields: [primaryId], references: [id], onDelete: Cascade)
+  duplicateComplaint Complaint @relation("LinkedDuplicate", fields: [duplicateId], references: [id], onDelete: Cascade)
+}
+
+model Acknowledgement {
+  id             String    @id @default(uuid())
+  complaintId    String    @unique
+  messageText    String
+  isApproved     Boolean   @default(false)
+  approvedBy     String?
+  approvedAt     DateTime?
+  sentAt         DateTime?
+  createdAt      DateTime  @default(now())
+
+  complaint      Complaint @relation(fields: [complaintId], references: [id], onDelete: Cascade)
+}
+
+model AuditLog {
+  id          String   @id @default(uuid())
+  complaintId String
+  operator    String   @default("AI System")
+  action      String   // e.g. "AI_CLASSIFIED", "DEPARTMENT_CHANGED", "ROUTING_APPROVED", "STATUS_UPDATED"
+  oldValue    String?
+  newValue    String?
+  notes       String?
+  timestamp   DateTime @default(now())
+
+  complaint   Complaint @relation(fields: [complaintId], references: [id], onDelete: Cascade)
+}
+
+model StatusHistory {
+  id          String   @id @default(uuid())
+  complaintId String
+  oldStatus   String
+  newStatus   String
+  changedBy   String
+  notes       String?
+  timestamp   DateTime @default(now())
+
+  complaint   Complaint @relation(fields: [complaintId], references: [id], onDelete: Cascade)
+}
+
+model Operator {
+  id          String   @id @default(uuid())
+  name        String
+  role        String   @default("Triage Operator")
+  email       String   @unique
+  department  String?
+  createdAt   DateTime @default(now())
+}
+
+model WeeklyReport {
+  id                   String   @id @default(uuid())
+  departmentName       String
+  weekStartDate        String
+  receivedCount        Int
+  resolvedCount        Int
+  pendingCount         Int
+  medianResolutionDays Float
+  highPriorityCount    Int
+  duplicateCount       Int
+  topLocalitiesJson    String   // JSON string of array of { locality: string, count: number }
+  createdAt            DateTime @default(now())
+}
