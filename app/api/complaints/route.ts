@@ -4,16 +4,16 @@ import { runFullAnalysis } from '@/services/ai';
 import { z } from 'zod';
 
 const complaintSchema = z.object({
-  title: z.string().optional().default('Civic Grievance Report'),
+  title: z.string().optional().nullable().default('Civic Grievance Report'),
   description: z.string().min(1, 'Description is required'),
-  language: z.enum(['English', 'Hindi', 'Hinglish']).optional(),
+  language: z.string().optional().nullable(),
   photoCaption: z.string().optional().nullable(),
   imageUrl: z.string().optional().nullable(),
   audioTranscription: z.string().optional().nullable(),
-  latitude: z.number().optional().nullable(),
-  longitude: z.number().optional().nullable(),
+  latitude: z.union([z.number(), z.string().transform((val) => parseFloat(val))]).optional().nullable(),
+  longitude: z.union([z.number(), z.string().transform((val) => parseFloat(val))]).optional().nullable(),
   locality: z.string().optional().nullable(),
-  wardNumber: z.number().optional().nullable(),
+  wardNumber: z.union([z.number(), z.string().transform((val) => parseInt(val, 10))]).optional().nullable(),
   address: z.string().optional().nullable(),
   isGpsDetected: z.boolean().optional(),
   sourceChannel: z.string().optional().default('Citizen Portal'),

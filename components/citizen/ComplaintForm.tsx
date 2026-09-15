@@ -753,7 +753,6 @@ export const ComplaintForm: React.FC = () => {
 
             <button
               type="submit"
-              onClick={() => handleSubmit()}
               disabled={isSubmitting}
               className={`w-full sm:w-auto px-8 py-3.5 rounded-xl text-white font-bold text-sm shadow-md transition flex items-center justify-center gap-2 ${
                 isSubmitting
